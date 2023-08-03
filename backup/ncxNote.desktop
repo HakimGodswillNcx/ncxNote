@@ -1,7 +1,0 @@
-[Desktop Entry]
-Version= 1.0
-Icon=/home/ncx/Desktop/ncxRepo/ncxNote/source/iconz/ico.jpeg
-Name= ncxGuiNote
-Exec= /usr/bin/env python3 /home/ncx/Desktop/ncxRepo/ncxNote/ncxNote.py
-Terminal=false
-Type=Application
