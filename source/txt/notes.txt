@@ -1,0 +1,15 @@
+Notes::
+
+Locate the code section using:
+target: ld-linux.so.2
+NOTICE: the source code from cheathappens countains capstone!
+- binary parser from attached process to disassembler (non-PEfile)
+
+inline asm
+objdump -D inline.bin > inline.dump
+cat inline.dumb
+
+add %EAX, %EAX ((means EAX * 2)) double EAX
+
+======================
+
