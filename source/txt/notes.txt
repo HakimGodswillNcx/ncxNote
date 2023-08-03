@@ -11,5 +11,3 @@ cat inline.dumb
 
 add %EAX, %EAX ((means EAX * 2)) double EAX
 
-======================
-

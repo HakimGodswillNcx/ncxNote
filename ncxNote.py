@@ -1,13 +1,8 @@
-hardCoredOpacity=0.1 #we need this to increment/decrease opacity in any use case.
-#(Opacity=0.0) is now by default.
-
-#----------------------------------------------------------------------------
+#--------------------.
 #future features list:
-#--------------------:
-#make Edit text resizable ctrl alt + and -
+#--------------------'
 #copy/past Other LABELS content.
 #:::::::::::::::::::::::::::::::::::::::::::::::::::
-
 import sys
 
 from PyQt5.Qt import *
@@ -15,15 +10,33 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
+#:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+import os #we start by current directory detect
+#any changing to folder names must be fixed from those lines
+#THIS is THE ONLY HARDCORED VALUE (if you change any forlder name/s)
+
+script_directory = os.path.dirname(os.path.abspath(__file__))
+#output: /home/user_name/dir/to/ncxNote (folder)
+notesDirectory=script_directory+"/source/txt/notes.txt"
+#output: /home/user_name/dir/to/ncxNote/source/txt/notes.txt
+
+#read notes from file
+#noteMsg="""
+#"""
+txtNotesFile = open(notesDirectory)
+noteMsg= txtNotesFile.read()
+txtNotesFile.close() #end of folder manipulations ! (here)
+#:::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #Global vars:
 #::::::::::::
 boolToSolid=False
 boolAllMsgs=True
 boolRawText=False
 
-incDecOpacity=0.9 #solid by default
+hardCoredOpacity=0.1 #this for preOpacity value for Qpainter (do NOT change)
+incDecOpacity=0.9 #solid by default (do NOT change)
 
-boolFullScreen=False #by default
+boolFullScreen=False #by default (do NOT change)
 
 textColor="white"
 
@@ -73,15 +86,6 @@ to show custom memory values in a LOOP,<br>
 from supposed to be custom function !<br>
 <br>
 """
-
-#read notes from file
-#noteMsg="""
-#"""
-txtNotesFile = open("/home/ncx/Desktop/ncxRepo/ncxNote/source/txt/notes.txt")
-#txtNotesFile.seek(0) #cursor tostart of byte
-noteMsg= txtNotesFile.read()
-txtNotesFile.close()
-
 
 #===================
 
@@ -250,7 +254,7 @@ class CustomWindow(QMainWindow):
         global noteMsg
         noteMsg = rawTextLabel.toPlainText()
         #write to file
-        txtNotesFile = open(r"/home/ncx/Desktop/ncxRepo/ncxNote/source/txt/notes.txt","w+")
+        txtNotesFile = open(notesDirectory,"w+")
         txtNotesFile.write(noteMsg)
         txtNotesFile.close()
     def zeroPose(self):
