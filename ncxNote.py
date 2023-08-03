@@ -23,7 +23,7 @@ notesDirectory=script_directory+"/source/txt/notes.txt"
 #read notes from file
 #noteMsg="""
 #"""
-txtNotesFile = open(notesDirectory)
+txtNotesFile = open(notesDirectory) #DO NOT CHANGE VAR NAMES
 noteMsg= txtNotesFile.read()
 txtNotesFile.close() #end of folder manipulations ! (here)
 #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::
