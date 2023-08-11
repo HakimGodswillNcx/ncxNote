@@ -3,6 +3,9 @@
 #--------------------'
 #copy/past Other LABELS content.
 #:::::::::::::::::::::::::::::::::::::::::::::::::::
+import setproctitle
+setproctitle.setproctitle("ncxNote")
+
 import sys
 
 from PyQt5.Qt import *
@@ -313,6 +316,7 @@ rawTextLabel.setGeometry(QRect(0, 0, heiTxt,widTxt))
 rawTextLabel.setBackgroundVisible(True)
 rawTextLabel.move(leftRightRaw, downUpRaw)
 rawTextLabel.setFont(QFont('Ubuntu', 15))
+rawTextLabel.setStyleSheet('background-color:#0080FF80;color:white;');
 rawTextLabel.hide()
 #=========================================================
 
